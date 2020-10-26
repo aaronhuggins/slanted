@@ -3,7 +3,7 @@ import { extract, FileStat } from 'tar'
 import { isMatch } from 'micromatch'
 import { html } from 'web-resource-inliner'
 import { promisify } from 'util'
-import { copy, mkdirs, pathExists, readFile, remove, symlink, writeFile } from 'fs-extra'
+import { copy, mkdirs, pathExists, readFile, remove, writeFile } from 'fs-extra'
 import { basename, dirname, join } from 'path'
 import {
   DEFAULT_OPTS,
@@ -21,13 +21,13 @@ export async function slanted (options: SlantedOpts = DEFAULT_OPTS) {
     ...DEFAULT_OPTS,
     ...options
   }
-  const slantPath = join(internalOpts.workdir, SLANT_DIR)
-  const tarPath = join(internalOpts.workdir, SLANT_FILE)
+  const slantPath = join(internalOpts.tempdir, SLANT_DIR)
+  const tarPath = join(internalOpts.tempdir, SLANT_FILE)
   const filename = basename(internalOpts.filepath)
   const fileContents = await readFile(internalOpts.filepath)
 
-  if (!(await pathExists(internalOpts.workdir))) {
-    await mkdirs(internalOpts.workdir)
+  if (!(await pathExists(internalOpts.tempdir))) {
+    await mkdirs(internalOpts.tempdir)
   }
 
   if (internalOpts.refresh || !(await pathExists(tarPath))) {
@@ -46,7 +46,7 @@ export async function slanted (options: SlantedOpts = DEFAULT_OPTS) {
 
   await extract({
     file: tarPath,
-    cwd: internalOpts.workdir,
+    cwd: internalOpts.tempdir,
     filter: (path: string, stat: FileStat) => !isMatch(path, UNPACK_IGNORE, { dot: true })
   })
 
@@ -78,6 +78,7 @@ export async function slanted (options: SlantedOpts = DEFAULT_OPTS) {
       images: 32,
       svgs: 32
     })
+
     await mkdirs(outputPath)
     await writeFile(join(outputPath, outputFile), inlineHtml)
   } else {

@@ -2,7 +2,7 @@ import { SlantedOpts } from "./interfaces"
 
 export const SLANT_BRANCH = 'main'
 export const SLANT_FILE = SLANT_BRANCH + '.tar.gz'
-export const SLANT_URL = 'https://github.com/Mermade/slant/archive/' + SLANT_FILE
+export const SLANT_URL = 'https://github.com/ahuggins-nhs/slant/archive/' + SLANT_FILE
 export const SLANT_DIR = 'slant-' + SLANT_BRANCH
 export const SLANT_INDEX = 'source/index.md'
 export const DEFUALT_WORKDIR = '.slanted'
@@ -24,7 +24,7 @@ export const UNPACK_IGNORE: string[] = [
 
 export const DEFAULT_OPTS: SlantedOpts = {
   filepath: 'index.md',
-  workdir: DEFUALT_WORKDIR,
+  tempdir: DEFUALT_WORKDIR,
   refresh: false,
   output: './'
 }
