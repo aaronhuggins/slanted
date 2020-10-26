@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "target": "es2020",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "types": ["mocha", "node"]
+  },
+
+  "exclude": ["node_modules", "dist", "test"]
+}
