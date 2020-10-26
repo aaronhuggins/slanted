@@ -16,6 +16,7 @@ import {
 import { run } from './helpers'
 import type { SlantedOpts } from './interfaces'
 
+/** Convert a Slant-compliant markdown to static html documentation. */
 export async function slanted (options: SlantedOpts = DEFAULT_OPTS) {
   const internalOpts: SlantedOpts = {
     ...DEFAULT_OPTS,

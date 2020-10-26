@@ -1,6 +1,7 @@
 import { spawn } from 'cross-spawn'
 import type { SpawnOptionsWithoutStdio } from 'child_process'
 
+/** @hidden */
 export async function run (
   command: string,
   args?: string[] | Buffer,

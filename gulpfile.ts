@@ -47,3 +47,5 @@ export async function trackDeps () {
 
 export const compile = shellTask(['tsc'], { name: 'compile' })
 export const prepack = gulp.series(trackDeps, compile)
+
+export const typedoc = shellTask(['typedoc'], { name: 'typedoc' })
