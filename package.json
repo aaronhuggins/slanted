@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Use Slant to generate HTML from Slate-conforming markdown.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "dist/bin/slanted.js",
   "scripts": {
     "prepack": "gulp prepack",
     "test": "mocha"
@@ -44,7 +46,8 @@
     "sass": "^1.26.10",
     "shelljs": "^0.8.4",
     "tar": "^6.0.5",
-    "web-resource-inliner": "^5.0.0"
+    "web-resource-inliner": "^5.0.0",
+    "yargs-parser": "^20.2.3"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
@@ -56,6 +59,7 @@
     "@types/tar": "^4.0.3",
     "@types/tough-cookie": "^4.0.0",
     "@types/web-resource-inliner": "^4.2.0",
+    "@types/yargs-parser": "^15.0.0",
     "gulp": "^4.0.2",
     "gulp-shell": "^0.8.0",
     "mocha": "^8.2.0",
