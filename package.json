@@ -4,7 +4,7 @@
   "description": "Use Slant to generate HTML from Slate-conforming markdown.",
   "main": "dist/index.js",
   "scripts": {
-    "prepack": "gulp trackDeps",
+    "prepack": "gulp prepack",
     "test": "mocha"
   },
   "repository": {
@@ -57,6 +57,7 @@
     "@types/tough-cookie": "^4.0.0",
     "@types/web-resource-inliner": "^4.2.0",
     "gulp": "^4.0.2",
+    "gulp-shell": "^0.8.0",
     "mocha": "^8.2.0",
     "source-map-support": "^0.5.19",
     "ts-node": "^9.0.0",
