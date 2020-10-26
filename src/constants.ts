@@ -5,7 +5,7 @@ export const SLANT_FILE = SLANT_BRANCH + '.tar.gz'
 export const SLANT_URL = 'https://github.com/ahuggins-nhs/slant/archive/' + SLANT_FILE
 export const SLANT_DIR = 'slant-' + SLANT_BRANCH
 export const SLANT_INDEX = 'source/index.md'
-export const DEFUALT_WORKDIR = '.slanted'
+export const DEFUALT_TEMPDIR = '.slanted'
 
 export const UNPACK_IGNORE: string[] = [
   '.github/**',
@@ -24,7 +24,7 @@ export const UNPACK_IGNORE: string[] = [
 
 export const DEFAULT_OPTS: SlantedOpts = {
   filepath: 'index.md',
-  tempdir: DEFUALT_WORKDIR,
+  tempdir: DEFUALT_TEMPDIR,
   refresh: false,
   output: './'
 }
